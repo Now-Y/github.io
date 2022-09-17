@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta name="author" content="order by womengda.cn/" />
+	<title>联系我们</title>
+	<link rel="icon" href="static/v4/images/favicon.ico" type="image/x-icon" />
+	<link rel="stylesheet" href="./static/v4/css/contact.css">
+	<link rel="stylesheet" href="./static/v4/css/public.css">
+	<script src="./static/v4/js/jquery.min.js"></script>
+</head>
+<body>
+	<div class="nav">
+		<div class="nav_con">
+			<img class="logo" src="static/v4/images/logo.png" width="5%"/>
+			<img class="logo_infro" src="static/v4/images/logo_infro.png" width="15%"/>
+			<ul class="nav_ul">
+				<li class="nav_li"><a href="index.html">首页</a><div></div></li>
+				<li class="nav_li"><a href="about.html">关于软创</a><div></div></li>
+				<li class="nav_li"><a href="game.html">软创实验室</a><div></div></li>
+				<li class="li_ep">加入软创<div class="li_list"><a href="join.html">软创招新</a></div>
+				</li>
+				<li class="nav_li"><a href="contact.html" class="active_hover">联系我们</a><div></div></li>
+			</ul>
+		</div>
+	</div>
+	<div class="contact">
+		<div class="contact_con">
+			<div class="c_c_title">联系我们</div>
+			<div class="c_c_pic">
+				<img width=100% src="static/v4/images/contactpic.png"/>
+			</div>
+			<div class="c_c_font1">
+				<ul>
+					<li>地址：郑州轻工业大学软件学院</li>
+					<li>招新邮箱：1306221035@qq.com</li>
+					<li>招新群号：572272821</li>
+				</ul>
+			</div>
+			<div class="c_c_font2">
+				<div class="c_c_ewm">
+					招新官方QQ群
+					<img src="static/v4/images/ewm1.jpg" width="100%" />
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>
+<script>
+	$(function() {
+		function play() {
+		};
+		play.prototype = {
+			NavHover:function() {
+				$(".nav_li").hover(function() {
+					$(this).find('div').stop().animate({"width":"100%"},300);
+				},function() {
+					$(this).find('div').stop().animate({"width":"0px"},200);
+				});
+			}
+		}
+		var Play = new play()
+		Play.NavHover();
+	})
+</script>
