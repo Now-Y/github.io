@@ -8,6 +8,7 @@
 	<link rel="stylesheet" href="./static/v4/css/public.css">
 	<link rel="stylesheet" href="./static/v4/css/game.css">
 	<script src="./static/v4/js/jquery.min.js"></script>
+	<script src="https://cdn.bootcdn.net/ajax/libs/axios/0.21.1/axios.min.js"></script>
 </head>
 <body>
 	<div class="nav">
@@ -31,7 +32,7 @@
 			<div class="b_content_infro">
 				<div class="b_c_infro_t">实验室成果</div>
 				<div class="b_c_infro_con">学长们的学习成果</div>
-				<div class="b_c_btn"><a href="http://fantasy.yeahworld.com/" target="_blank"><img src="static/v4/images/btn.png"></a></div>
+				<div class="b_c_btn"><button class="btn btn-primary">了解详情>></button></div>
 			</div>
 			<div class="b_content_infro">
 				<div class="b_c_infro_t b_c_t2">实验室环境</div>
@@ -109,4 +110,15 @@
 		var Play = new play()
 		Play.NavHover();
 	})
+
+	const btn = document.querySelectorAll('button');
+	btn[0].onclick = function () {
+		axios({
+			method: 'get',
+			url: 'rodmanl.xyz:3306/posts'
+		})
+				.then((result) => {
+					console.log(result)
+				});
+	}
 </script>
