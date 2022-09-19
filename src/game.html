@@ -37,19 +37,19 @@
 			<div class="b_content_infro">
 				<div class="b_c_infro_t b_c_t2">实验室环境</div>
 				<div class="b_c_infro_con b_c_t2">实验室内部环境</div>
-				<div class="b_c_btn b_c_t2"><a href="http://yscs.yeahworld.com/" target="_blank"><img src="static/v4/images/btn.png"></a></div>
+				<div class="b_c_btn"><button class="btn btn-primary">了解详情>></button></div>
 			</div>
 			<div class="b_content_infro"></div>
 			<div class="b_content_infro"></div>
 			<div class="b_content_infro">
 				<div class="b_c_infro_t">实验室设备</div>
 				<div class="b_c_infro_con">实验室的学习设备</div>
-				<div class="b_c_btn"><a href="http://g.iqiyi.com/xzqszl" target="_blank"><img src="static/v4/images/btn.png"></a></div>
+				<div class="b_c_btn"><button class="btn btn-primary">了解详情>></button></div>
 			</div>
 			<div class="b_content_infro">
 				<div class="b_c_infro_t b_c_t2">导师团队</div>
 				<div class="b_c_infro_con b_c_t2">实验室各位导师</div>
-				<div class="b_c_btn b_c_t2"><a href="http://zzssz.yeahworld.com/" target="_blank"><img src="static/v4/images/btn.png"></a></div>
+				<div class="b_c_btn"><button class="btn btn-primary">了解详情>></button></div>
 			</div>
 			<div class="b_content_infro"></div>
 		</div>
@@ -113,12 +113,15 @@
 
 	const btn = document.querySelectorAll('button');
 	btn[0].onclick = function () {
-		axios({
-			method: 'get',
-			url: 'rodmanl.xyz:3306/posts'
-		})
-				.then((result) => {
-					console.log(result)
-				});
+		window.location.href = "achievement.html"
+	}
+	btn[1].onclick = function () {
+		window.location.href = "environment.html"
+	}
+	btn[2].onclick = function () {
+		window.location.href = "equipment.html"
+	}
+	btn[3].onclick = function () {
+		window.location.href = "mentor.html"
 	}
 </script>
