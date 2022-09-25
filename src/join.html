@@ -31,14 +31,17 @@
 		<script>
 			$(function () {
 				$("#btn").click(function () {
-					$.post("${pageContext.request.contextPath}/a2",
+					$.post("http://120.48.132.242:8080/doc.html#/home",
 							function (data) {
 								var html="";
 								for(let i=0;i<data.length;i++)
 								{
 									html+="<tr>"+
+											"<td>"+data[i].email+"</td>"+
+											"<td>"+data[i].id+"</td>"+
+											"<td>"+data[i].major+"</td>"+
 											"<td>"+data[i].name+"</td>"+
-											"<td>"+data[i].age+"</td>"+
+											"<td>"+data[i].phoneNumber+"</td>"+
 											"<td>"+data[i].sex+"</td>"+
 											"</tr>"
 								}
@@ -49,16 +52,18 @@
 		</script>
 	</head>
 	<body>
+
 	<input type="button" id="btn" value="加载数据">
 	<tr>
 		<h1 align="center">招新结果</h1>
-		<hr >
 		<table border="1px" align="center" width="50%">
 			<tr>
-				<td>姓名</td>
-				<td>性别</td>
-				<td>学号</td>
-				<td>备注</td>
+				<td>email</td>
+				<td>id</td>
+				<td>major</td>
+				<td>name</td>
+				<td>phoneNumber</td>
+				<td>sex</td>
 			</tr>
 			<tbody id="content">
 			</tbody>
