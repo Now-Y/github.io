@@ -29,46 +29,80 @@
 		<title>Title</title>
 		<script src="static/v4/js/jquery-3.5.1.js"></script>
 		<script>
+			//表单数据转JSON对象格式
 			$(function () {
-				$("#btn").click(function () {
-					$.get("http://120.48.132.242:8080/doc.html#/default/%E6%8F%90%E4%BA%A4%E7%94%B3%E8%AF%B7%E8%A1%A8%E7%9B%B8%E5%85%B3%E6%8E%A5%E5%8F%A3/SearchInfoUsingGET//sign/search",
-							function (data) {
-								var jsonobj= eval('(' + data + ')');
-								var html="";
-								for(let i=0;i<data.length;i++)
-								{
-									html+="<tr>"+
-											"<td>"+jsonobj[i].email+"</td>"+
-											"<td>"+jsonobj[i].id+"</td>"+
-											"<td>"+jsonobj[i].major+"</td>"+
-											"<td>"+jsonobj[i].name+"</td>"+
-											"<td>"+jsonobj[i].phoneNumber+"</td>"+
-											"<td>"+jsonobj[i].sex+"</td>"+
-											"</tr>"
-								}
-								$("#content").html(html);
-							});
-				})
-			})
+
+				//表单转json函数
+
+				$.fn.serializeObject = function () {
+
+					var o = {};
+
+					var a = this.serializeArray();
+
+					$.each(a, function () {
+
+						if (o[this.name] !== undefined) {
+
+							if (!o[this.name].push) {
+
+								o[this.name] = [o[this.name]];
+
+							}
+
+							o[this.name].push(this.value || '');
+
+						} else {
+
+							o[this.name] = this.value || '';
+
+						}
+
+					});
+
+					return o;
+
+				}
+			});
+
+
+			function loadXMLDoc() {
+				console.log($('#form1').serialize());//调试用
+
+				$.ajax({
+					type: "GET",
+					url: "http://120.48.132.242:8080/doc.html#/default/%E6%8F%90%E4%BA%A4%E7%94%B3%E8%AF%B7%E8%A1%A8%E7%9B%B8%E5%85%B3%E6%8E%A5%E5%8F%A3/SearchInfoUsingGET",
+					dataType: "json",
+					cache: false,
+					contentType: "application/json;charset=UTF-8",
+					data: JSON.stringify($('#form1').serializeObject()),
+					success: function (result) {
+						console.log("传输成功！！");
+						console.log(result);
+
+					},
+					error: function (e) {
+						console.log("err", e);
+					}
+				});
+			}
 		</script>
 	</head>
 	<body>
 
-	<input type="button" id="btn" value="加载数据">
-	<tr>
-		<h1 align="center">招新结果</h1>
+	<form id="form1" method="post" action="http://120.48.132.242:8080/doc.html#/default/%E6%8F%90%E4%BA%A4%E7%94%B3%E8%AF%B7%E8%A1%A8%E7%9B%B8%E5%85%B3%E6%8E%A5%E5%8F%A3/SubmitTableUsingPOST">
 		<table border="1px" align="center" width="50%">
 			<tr>
-				<td>email</td>
-				<td>id</td>
+				<td>邮箱</td>
+				<td>学号</td>
 				<td>major</td>
-				<td>name</td>
-				<td>phoneNumber</td>
-				<td>sex</td>
+				<td>姓名</td>
+				<td>手机号</td>
+				<td>性别</td>
 			</tr>
-			<tbody id="content">
-			</tbody>
 		</table>
+	</form>
+	<input type="submit" onclick="loadXMLDoc()" value="加载数据">
 	</body>
 	</html>
 	<!--<div class="game_banner"></div>
