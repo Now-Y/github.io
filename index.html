@@ -1,233 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-    <meta name="author" content="order by womengda.cn/" />
-	<title>软创欢迎你</title>
-	<link rel="icon" href="src/static/v4/images/favicon.ico" type="image/x-icon" />
-	<link rel="stylesheet" href="src/static/v4/css/public.css">
-	<link rel="stylesheet" href="src/static/v4/css/index.css">
-	<script src="src/static/v4/js/jquery.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        html {
+            height: 100%;
+        }
+        body {
+            height: 100%;
+        }
+        .container {
+            height: 100%;
+            background-image: linear-gradient(to right, #fbc2eb, #a6c1ee);
+        }
+        .login-wrapper {
+            background-color: #fff;
+            width: 358px;
+            height: 588px;
+            border-radius: 15px;
+            padding: 0 50px;
+            position: relative;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .header {
+            font-size: 38px;
+            font-weight: bold;
+            text-align: center;
+            line-height: 200px;
+        }
+        .input-item {
+            display: block;
+            width: 100%;
+            margin-bottom: 20px;
+            border: 0;
+            padding: 10px;
+            border-bottom: 1px solid rgb(128, 125, 125);
+            font-size: 15px;
+            outline: none;
+        }
+        .input-item::placeholder {
+            text-transform: uppercase;
+        }
+        .btn {
+            text-align: center;
+            padding: 10px;
+            width: 100%;
+            margin-top: 40px;
+            background-image: linear-gradient(to right, #a6c1ee, #fbc2eb);
+            color: #fff;
+        }
+
+        a {
+            text-decoration-line: none;
+            color: #abc1ee;
+        }
+        .container button{
+            position: absolute;
+            top: 200px;
+            right: 50px;
+            background-color: #fff;
+            border: none;   // 去掉边框
+        outline: none;  // 去掉点击按钮后的边框
+        }
+    </style>
 </head>
 <body>
-	<div class="nav">
-		<div class="nav_con">
-			<img class="logo" src="src/static/v4/images/logo.png" width="5%"/>
-			<img class="logo_infro" src="src/static/v4/images/logo_infro.png" width="15%"/>
-			<ul class="nav_ul">
-				<li class="nav_li"><a href="index.html" class="active_hover">首页</a><div></div></li>
-				<li class="nav_li"><a href="src/about.html">关于软创</a><div></div></li>
-				<li class="nav_li"><a href="src/game.html">软创实验室</a><div></div></li>
-				<li class="li_ep">加入软创<div class="li_list"><a href="src/join.html">软创招新</a></div>
-				</li>
-				<li class="nav_li"><a href="src/contact.html">联系我们</a><div></div></li>
-			</ul>
-		</div>
-	</div>
-	<!--<div class="lunbanner">
-		<a class="lunbo_a" href="http://fantasy.yeahworld.com/">
-			<div class="lunbo">
-			</div>
-		</a>
-		<div class="lun_list">
-			<ul>
-				<li class="foucus_list"></li>
-				<li></li>
-				<li></li>
-				<li></li>
-			</ul>
-		</div>
-	</div>-->
-	<div class="lun_nav">
-		<ul>
-			<a class="a1" href="src/game.html">
-			<li>
-				<div class="lun_nav_title">软创实验室</div>
-				<div class="lun_nav_infro">致力培养<br>高端，优秀的学子</div>
-			</li>
-			</a>
-		</ul>
-	</div>
-	<!--<div class="recommend">
-		<div class="r_title">实验室介绍</div>
-		<div class="r_infro">Lab Introduction</div>
+<div class="container">
+    <div class="login-wrapper">
+        <div class="header">Login</div>
+        <div class="form-wrapper">
+            <form action="http://120.48.132.242:8080/user/login" method="post">
+                <input type="text" id="phoneNumber" placeholder="phoneNumber" class="input-item">
+                <button id="btn">发送验证码</button>
+                <input type="text" id="verification code" placeholder="verification code" class="input-item">
+                <input type="submit" class="btn" onclick="login()" value="Login">
+            </form>
+        </div>
 
-		&lt;!&ndash; 编辑介绍视频 &ndash;&gt;
-		<div class="r_pic">
-			<div class="feng_pic">
-				<div class="r_c_cover">
-					<div class="r_c_c_title_one">《杨树林》<br/>风暴来袭 集结救世</div>
-					<span class="r_c_line_one"></span>
-					<div class="r_c_c_font_one">千人屠龙战一触即发</div>
-					<div class="r_c_c_btn_one"><a href="http://fantasy.yeahworld.com/" target="_blank"><img src="src/static/v4/images/right.png"/></a></div>
-				</div>
-			</div>
-			<div class="find_pic">
-				<div class="r_c_cover">
-					<div class="r_c_c_title">《寻找前世之旅》<br/>同名电视剧正版授权</div>
-					<span class="r_c_line"></span>
-					<div class="r_c_c_font">剧情还原再现经典</div>
-					<div class="r_c_c_btn"><a href="http://g.iqiyi.com/xzqszl" target="_blank"><img src="src/static/v4/images/right.png"/></a></div>
-				</div>
-			</div>
-			<div class="glod_pic">
-				<div class="r_c_cover">
-					<div class="r_c_c_title">《妖神传说》<br/>为爱入魔妖神出世</div>
-					<span class="r_c_line"></span>
-					<div class="r_c_c_font">全新坐骑惊艳登场</div>
-					<div class="r_c_c_btn"><a href="http://yscs.yeahworld.com/" target="_blank"><img src="src/static/v4/images/right.png"/></a></div>
-				</div>
-			</div>
-			<div class="warm_pic">
-				<div class="r_c_cover">
-					<div class="r_c_c_title">《征战十三州》<br/>九月新版本手游发布</div>
-					<span class="r_c_line"></span>
-					<div class="r_c_c_font">裂图封王 君临十三州</div>
-					<div class="r_c_c_btn"><a href="http://zzssz.yeahworld.com/" target="_blank"><img src="src/static/v4/images/right.png"/></a></div>
-				</div>
-			</div>
-			<div class="light_pic">
-				<div class="r_c_cover">
-					<div class="r_c_c_title">《神域之光》<br/>触摸会呼吸的魔幻世界</div>
-					<span class="r_c_line"></span>
-					<div class="r_c_c_font">新资料片震撼开启</div>
-					<div class="r_c_c_btn"><a href="http://sky.yeahworld.com/" target="_blank"><img src="src/static/v4/images/right.png"/></a></div>
-				</div>
-			</div>
-		</div>
-	</div>-->
+    </div>
+</div>
 
+<script>
+    document.getElementById('btn').onclick = function () {
+        var phoneNumber = document.getElementById('phoneNumber').value
+        $.ajax({
+            url: "http://120.48.132.242:8080/sendMs", //提交的路径
+            type: "post",       //提交方式
+            data: {
+                phoneNumber:phoneNumber
+            },
+            dataType: "JSON",       //规定请求成功后返回的数据
+            success: function (data) {
+                var obj = JSON.parse(data)
+                if (obj.code === 1){
+                    alert('验证码发送成功')
+                }else if (obj.code === 0){
+                    alert('验证码发送失败，请稍后再试')
+                }
 
-	<div class="brang_video">
-		<div class="r_title">实验室成员</div>
-		<div class="r_infro">Lab member</div>
-		<div class="b_content">
-			<div class="b_content_infro">
-				<div class="b_con_cover">
-					<div class="video_play2">
-						<img src="src/static/v4/images/play.png"/>
-					</div>
-				</div>
-				<div class="play_video2">
-					<video src="./static/v4/images/movie.mp4" width="100%" height="100%" controls></video>
-				</div>
-			</div>
-			<div class="b_content_infro">
-				<div class="b_c_infro_t">杨树林</div>
-				<div class="b_c_infro_con">前端学习者</div>
-				<div class="b_c_btn"><a href="https://github.com/Now-Y" target="_blank"><img src="src/static/v4/images/btn.png"></a></div>
-			</div>
-			<div class="b_content_infro">
-				<div class="b_c_infro_t b_c_t2">胥天昊</div>
-				<div class="b_c_infro_con b_c_t2">后端学习者</div>
-				<div class="b_c_btn b_c_t2"><a href="https://www.hellocode.top" target="_blank"><img src="src/static/v4/images/btn.png"></a></div>
-			</div>
-			<div class="b_content_infro">
-				<div class="b_con_cover">
-					<div class="video_play">
-						<img src="src/static/v4/images/play.png"/>
-					</div>
-				</div>
-				<div class="play_video">
-					<video src="src/static/v4/images/movie2.mp4" width="100%" height="100%" controls></video>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="contact_us">
-		<div class="contact_con">
-			<div class="con_list c_c_one">
-				<div class="con_list_title">联系我们</div>
-				<div class="c_l_wx">
-					<img src="src/static/v4/images/wx.png" width="18%"/>
-					<div class="wx_font">加入招新群<br>获得更多信息</div>
-					<img class="wx_img" src="src/static/v4/images/ewm1.jpg"/>
-				</div>
+            },
+            error: function (errorMsg) {
+                alert('系统繁忙，请稍后再试')
+            }
+        });
 
-			</div>
-			<div class="con_list c_c_two">
-				<div class="c_c_t_con">
-					<img src="src/static/v4/images/mail.png"/>
-					<div class="c_mail">1306221035@qq.com</div>
-				</div>
-				<div class="c_c_t_con c_c_address">
-					<img src="src/static/v4/images/address.png"/>
-					<div class="c_mail">郑州轻工业大学软件学院</div>
-				</div>
-			</div>
+    }
 
-		</div>
-	</div>
-
-	<div class="qaPhoto">
-		<p class="question">问：单个QQ可以多个大区角色参与活动吗？</p>
-		<p class="answer">答： 不可以。仅可选择1个大区角色参与。</p>
-		<p class="question">问：如果9月12日没有完成游戏对局，还可以开启宝箱吗？</p>
-		<p class="answer">答： 不可以。一定要当天完成游戏对局，获得钥匙，才可以开启宝箱。</p>
-		<p class="question">问：如果9月12日当天，常玩大区排队，进入不了服务器怎么办？</p>
-		<p class="answer">答： 当天可以用任意大区角色完成对局，先获得钥匙。再重新绑定已升级宝箱的大区角色，开启奖励。</p>
-		<p class="question">问：皮肤和图标是否会产出已拥有的道具？</p>
-		<p class="answer">答：优先产出对应奖池内未拥有的道具。如奖池道具已全拥有，则会产出已拥有道具，可领取到其它大区。</p>
-	</div>
-
+    function login() {
+        var userCode = document.getElementById('verification code').value
+        var phoneNumber = document.getElementById('phoneNumber').value
+        $.ajax({
+            url: "http://120.48.132.242:8080/user/login", //提价的路径
+            type: "post",       //提交方式
+            data: {
+                userCode:userCode,
+                phoneNumber:phoneNumber
+            },
+            dataType: "JSON",       //规定请求成功后返回的数据
+            success: function (data) {
+                var obj = JSON.parse(data)
+                //请求成功之后进入该方法，data为成功后返回的数据
+                if (obj.code === 0){
+                    alert('验证码错误')
+                }else if (obj.code === 1){
+                    window.location.href = "src/Lb.html"
+                }
+            },
+            error: function (errorMsg) {
+                //请求失败之后进入该方法
+                alert('系统错误，请稍后再试')
+            }
+        });
+    }
+</script>
 </body>
 </html>
-<script>
-	$(function() {
-		function play() {
-			this.a = -1;
-			this.url = ["banner1.jpg","banner2.jpg","banner3.jpg","banner4.jpg"];
-			this.aurl = ["http://fantasy.yeahworld.com/","http://zzssz.yeahworld.com/","http://g.iqiyi.com/xzqszl","join.html"];
-		};
-		play.prototype = {
-			Lun:function() {
-				$(".lunbanner .lunbo_a").attr("href",Play.aurl[Play.a]);
-				$(".lunbanner .lunbo").css({"background":"url(./static/v4/images/"+Play.url[Play.a]+") no-repeat center"},"backgroundSize","auto 100%");
-				if(Play.a > 2) {
-					Play.a = -1;
-				}
-				Play.a++;
-				$(".lun_list ul li").removeClass("foucus_list");
-				$(".lun_list ul li").eq(Play.a-1).addClass("foucus_list");
-
-				// console.log(Play.a);
-			},
-			Inval:function() {
-				setInterval(Play.Lun(),2000);
-			},
-			Click:function() {
-				$(".lun_list ul li").click(function() {
-					console.log($(this).index());
-					$(".lun_list ul li").removeClass("foucus_list");
-					$(".lun_list ul li").eq($(this).index()).addClass("foucus_list");
-					Play.a = $(this).index();
-					$(".lunbo").css({"background":"url(./static/v4/images/"+Play.url[Play.a]+") no-repeat center"},"backgroundSize","100%");
-					$(".lunbanner .lunbo_a").attr("href",Play.aurl[Play.a]);
-
-				});
-			},
-			NavHover:function() {
-				$(".nav_li").hover(function() {
-					$(this).find('div').stop().animate({"width":"100%"},300);
-				},function() {
-					$(this).find('div').stop().animate({"width":"0px"},200);
-				});
-			},
-			Video:function(a,b) {
-				$(a).click(function() {
-					console.log($(this).find("video"));
-					$(b).fadeIn();
-					$(this).parent().parent().find("video")[0].play();
-				});
-			}
-		}
-		var Play = new play()
-		Play.Lun();
-		Play.Inval();
-		setInterval(Play.Inval,5000);
-		Play.Click();
-		Play.NavHover();
-		Play.Video(".video_play2",".play_video2");
-		Play.Video(".video_play",".play_video");
-	})
-</script>
