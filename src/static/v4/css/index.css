@@ -20,42 +20,7 @@ html,body {
 			background: url("../images/qaPhoto.png") no-repeat center;
 			background-size: 100%;
 		}
-		/*===轮播=====*/
-		.lunbanner {
-			position: relative;
-		}
-		.lunbo {
-			z-index: 3;
-			position: relative;
-			height: 550px;
-			width: 100%;
-			background: url(../images/banner1.jpg) no-repeat center;
-			background-size: 100%;
-		}
-			.lun_list {
-				z-index: 4;
-				position: absolute;
-				bottom: 30px;
-				right: 100px;
-				width: 170px;
-				height: 20px;
-			}
-				.lun_list ul li {
-					float: left;
-					margin-left: 15px;
-					width: 18px;
-					height: 18px;
-					border-radius: 50%;
-					background: white;
-				} 
-				.lun_list ul li:hover {
-					cursor: pointer;
-				}
-			.lun_list .foucus_list {
-				background: #2E93D6;
-				width: 35px;
-				border-radius: 90px;
-			}
+
 		/*轮播下的Nav*/
 		.lun_nav {
 			position: relative;
@@ -99,147 +64,6 @@ html,body {
 					.lun_nav ul li:nth-of-type(2) {
 						color: white;
 					}
-		/*recomend热门推荐*/
-		.recommend {
-			position: relative;
-			top: 30px;
-			width: 1250px;
-			height: auto;
-			text-align: center;
-		}
-			.r_title {
-				font-size: 32px;
-			} 
-			.r_infro {
-				color: #307DE3;
-			}
-			.r_pic {
-				margin-top: 30px;
-				width: 100%;
-				height: 460px;
-			}
-				.r_pic div {
-					position: relative;
-					float: left;
-					width: 395px;
-					margin-right: 10px;
-				}
-				.r_pic div:hover {
-					cursor: pointer;
-				}
-				.feng_pic {
-					height: 100%;
-					background: url(../images/fengpic.jpg) no-repeat;
-					background-size: 100%; 
-					-webkit-transition: .2s; 
-					transition: .2s;
-				}
-				.feng_pic:hover {
-					background-size: 105%; 
-				}
-				.feng_pic:hover .r_c_cover {
-					display: block;
-				}
-					.r_c_cover {
-						position: absolute;
-						width: 100%;
-						height: 100%;
-						background: rgba(13,13,13,.5);
-						display: none;
-					}
-				.find_pic {
-					margin-bottom: 10px;
-					height: 225px;
-					background: url(../images/findpic.jpg) no-repeat;
-					background-size: 100%; 
-					-webkit-transition: .3s; 
-					transition: .3s;
-				}
-				.find_pic:hover {
-					background-size: 105%; 
-				}
-				.find_pic:hover .r_c_cover {
-					display: block;
-				}
-				.glod_pic {
-					margin-bottom: 10px;
-					height: 225px;
-					background: url(../images/glodpic.jpg) no-repeat;
-					background-size: 100%; 
-					-webkit-transition: .3s; 
-					transition: .3s;
-				}
-				.glod_pic:hover {
-					background-size: 105%; 
-				}
-				.glod_pic:hover .r_c_cover {
-					display: block;
-				}
-				.warm_pic {
-					height: 225px;
-					background: url(../images/warmpic.jpg) no-repeat;
-					background-size: 100%; 
-					-webkit-transition: .3s; 
-					transition: .3s;
-				}
-					.r_c_c_title {
-						margin-top:30px;
-						color: white;
-						font-size: 20px;
-						line-height: 30px;
-					}
-					.r_c_line {
-						display: inline-block;
-						height: 3px;
-						width: 60px;
-						background: rgba(229,227,227,.7);
-					}
-					.r_c_c_font {
-						margin-top:15px;
-						color: white;
-					}
-					.r_c_c_btn {
-						margin-top: 15px;
-					}
-					.r_c_c_title_one {
-						margin-top: 100px;
-						color: white;
-						font-size: 20px;
-						line-height: 30px;
-					}
-					.r_c_line_one {
-						margin-top: 20px;
-						display: inline-block;
-						height: 3px;
-						width: 60px;
-						background: rgba(229,227,227,.7);
-					} 
-					.r_c_c_font_one {
-						margin-top:30px;
-						color: white;
-					}
-					.r_c_c_btn_one {
-						margin-top: 30px;
-					}
-				.warm_pic:hover {
-					background-size: 105%; 
-				}
-				.warm_pic:hover .r_c_cover {
-					display: block;
-				}
-				.light_pic {
-					height: 225px;
-					background: url(../images/lightpic.jpg) no-repeat;
-					background-size: 100%; 
-					-webkit-transition: .3s; 
-					transition: .3s;
-				}
-				.light_pic:hover {
-					background-size: 105%; 
-				}
-				.light_pic:hover .r_c_cover {
-					display: block;
-				}
 		/*brang_video品牌视频*/
 		.brang_video {
 			position: relative;
@@ -296,16 +120,6 @@ html,body {
 					-webkit-transition: .5s;
 					transition: .5s;
 				}
-				/*.b_content_infro:nth-of-type(1):hover .b_con_cover {
-					display: block;
-				}
-				.b_content_infro:nth-of-type(4):hover .b_con_cover {
-					display: block;
-				}
-				.b_content_infro:nth-of-type(1):hover,.b_content_infro:nth-of-type(4):hover {
-					cursor: pointer;
-					background-size: 105%;
-				}*/
 					.b_c_infro_t {
 						margin-top: 30px;
 						font-size: 40px;

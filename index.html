@@ -95,6 +95,7 @@
         $.ajax({
             url: "http://120.48.132.242:8080/sendMs", //提交的路径
             type: "post",       //提交方式
+            contentType:"application/x-www-form-urlencoded",
             data: {
                 phoneNumber:phoneNumber
             },
@@ -119,8 +120,9 @@
         var userCode = document.getElementById('verification code').value
         var phoneNumber = document.getElementById('phoneNumber').value
         $.ajax({
-            url: "http://120.48.132.242:8080/user/login", //提价的路径
+            url: "http://120.48.132.242:8080/user/login", //提供的路径
             type: "post",       //提交方式
+            contentType:"application/x-www-form-urlencoded",
             data: {
                 userCode:userCode,
                 phoneNumber:phoneNumber

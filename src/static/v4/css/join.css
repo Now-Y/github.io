@@ -3,13 +3,6 @@ html,body {
 	height: 100%;
 	background: white;
 }
-		/*game_banner*/
-		.game_banner {
-			width: 100%;
-			height: 300px;
-			background: url(../images/sdsdsdbanner2.jpg) no-repeat center;
-			background-size: cover;
-		}
 		/*join*/
 		.join {
 			position: relative;
